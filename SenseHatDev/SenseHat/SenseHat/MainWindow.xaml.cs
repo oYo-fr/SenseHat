@@ -49,7 +49,7 @@ namespace SenseHat
             using (var client = new SshClient(Constants.RaspberryPiIp, Constants.RaspberryPiUser, Constants.RaspberryPiPassword))
             {
                 client.Connect();
-                SshCommand cmd = client.RunCommand("cd Documents/git/SenseHat && git pull");
+                SshCommand cmd = client.RunCommand("cd Documents/git/SenseHat && git add -A && git commit -m ""Your Message""");
 
                 string result = cmd.Result;
 
