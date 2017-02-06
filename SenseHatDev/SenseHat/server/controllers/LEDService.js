@@ -1,4 +1,5 @@
 'use strict';
+const sense = require("sense-hat-led").sync;
 
 exports.lED_MatrixClearPUT = function(args, res, next) {
   /**
@@ -111,6 +112,7 @@ exports.lED_MatrixSet_pixelPUT = function(args, res, next) {
    * pixel Pixel A pixel.
    * no response value expected for this operation
    **/
+   sense.setPixel(args.x.value, args.y.value, [args.r.value, args.g.value, args.b.value]);
   res.end();
 }
 
